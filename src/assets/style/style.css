@@ -1,0 +1,39 @@
+@import './base.css';
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #f8f9fa; /* Light background */
+  border-bottom: 1px solid #ddd;
+}
+
+header .logo {
+  flex-shrink: 0; /* Prevent the logo from shrinking */
+}
+
+header .wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #e9ecef; /* Light hover effect */
+}

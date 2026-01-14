@@ -1,0 +1,356 @@
+@import '../../assets/style/base.css';
+
+.login-page, .sign-up {
+  min-height: 100vh;
+  height: auto;
+  background: 
+    linear-gradient(135deg, var(--primary-bg-color, rgba(63, 81, 181, 0.85)), var(--light-bg-color, rgba(156, 39, 176, 0.75))),
+    radial-gradient(circle at 20% 30%, var(--secondary-bg-color, rgba(255, 255, 255, 0.08)) 0%, transparent 60%),
+    radial-gradient(circle at 80% 70%, var(--light-bg-color, rgba(255, 255, 255, 0.08)) 0%, transparent 60%);
+  background-blend-mode: soft-light;
+  background-size: cover, 350px 350px, 375px 375px;
+  animation: waveMotion 80s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+@keyframes waveMotion {
+  0% {
+    background-position: -100% -100%, -50% 0%, 0% 50%;
+  }
+  25% {
+    background-position: 0% 100%, 25% 50%, 50% 0%;
+  }
+  50% {
+    background-position: 100% 0%, 50% 100%, 100% 50%;
+  }
+  75% {
+    background-position: 150% -100%, 75% 50%, 150% 100%;
+  }
+  100% {
+    background-position: 0% -100%, 100% 0%, 200% 50%;
+  }
+}
+
+.form-page {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.95);
+  width: 100%;
+  max-width: 450px;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(8px);
+  transform: translateY(0);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0 auto;
+}
+
+.form-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.form-container h1 {
+  color: var(--primary-bg-color);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.form-container h2 {
+  color: var(--secondary-bg-color);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid var(--neutral-border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: var(--form-input-bg-color);
+  box-sizing: border-box;
+}
+
+input:focus, select:focus {
+  border-color: var(--hover-bg-color);
+  box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.1);
+  outline: none;
+}
+
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-container input {
+  width: 100%;
+  padding-right: 2.5rem;
+}
+
+.password-container i {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+button {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: var(--hover-bg-color);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0.5rem 0;
+}
+
+button:not(.disabled-button):hover {
+  background: var(--primary-bg-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.disabled-button {
+  background: var(--neutral-border-color);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.form-selector {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 450px;
+}
+
+.form-selector button {
+  flex: 1;
+  background: var(--dropdown-bg-color);
+  color: var(--neutral-border-color);
+  border: 2px solid var(--neutral-border-color);
+}
+
+.form-selector button.active {
+  background: var(--hover-bg-color);
+  color: white;
+  border: none;
+}
+
+.links {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--text-color);
+}
+
+.links a, .links span {
+  color: var(--hover-bg-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.links a:hover, .links span:hover {
+  color: var(--primary-bg-color);
+}
+
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.dropdown-options {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  scrollbar-width: thin;
+}
+
+.dropdown-options .option {
+  padding: 0.75rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.dropdown-options .option:hover {
+  background: var(--dropdown-hover-bg-color);
+}
+
+.terms-box {
+  background: var(--light-bg-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  width: 90%;
+}
+
+.terms-box a {
+  color: var(--hover-bg-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.terms-box input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+  .form-page {
+    padding: 0;
+  }
+
+  .form-container {
+    max-width: 400px;
+    padding: 1.5rem;
+  }
+
+  .form-container h1,
+  .form-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .input-group {
+    gap: 1rem;
+  }
+
+  button {
+    font-size: 0.875rem;
+    padding: 0.875rem;
+  }
+
+  .form-selector {
+    gap: 0.75rem;
+  }
+
+  .dropdown-options {
+    max-height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-page, .sign-up {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-container {
+    max-width: 350px;
+    padding: 1.25rem;
+  }
+
+  .form-container h1,
+  .form-container h2 {
+    font-size: 1.25rem;
+  }
+
+  .input-group {
+    gap: 0.75rem;
+  }
+
+  button {
+    font-size: 0.85rem;
+    padding: 0.75rem;
+  }
+
+  .form-selector {
+    gap: 0.5rem;
+  }
+
+  .terms-box {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .login-page, .sign-up {
+    padding: 0.5rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-container {
+    max-width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .form-container h1,
+  .form-container h2 {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .input-group {
+    gap: 0.5rem;
+  }
+
+  input, select, button {
+    font-size: 0.75rem;
+  }
+
+  button {
+    padding: 0.75rem;
+  }
+
+  .form-selector {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .links {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .terms-box {
+    padding: 0.75rem;
+  }
+
+  .custom-dropdown {
+    width: 100%;
+  }
+}
