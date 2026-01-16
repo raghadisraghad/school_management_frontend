@@ -12,8 +12,8 @@ This is the **frontend** Vue.js application for the school communication platfor
 
 1. **Clone this repo:**
    ```bash
-   git clone https://github.com/raghadisraghad/school_management_frontend.git
-   cd school_management_frontend
+   git clone https://github.com/raghadisraghad/school-club-management.git
+   cd school-club-management
    ```
 
 2. **Install dependencies:**
