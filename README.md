@@ -4,7 +4,7 @@ This is the **frontend** Vue.js application for the school communication platfor
 
 > **Important**: You need to run the backend first. Get it here:
 > 
-> **[Backend Repository](https://github.com/raghadisraghad/school_management_backend.git)**
+> **[Backend Repository](https://github.com/raghadisraghad/school-club-management-backend.git)**
 
 ---
 
